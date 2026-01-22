@@ -1,0 +1,40 @@
+N1 – experiment met netmiko show commands
+
+from netmiko import ConnectHandler
+
+# 1) Device-definitie (zoals in de les)
+device = {
+    "device_type": "cisco_ios",
+    "host": "192.168.56.101",
+    "username": "admin",
+    "password": "cisco",
+    "secret": "cisco"
+}
+
+# 2) Verbinding maken
+connection = ConnectHandler(**device)
+
+# 3) Enable mode (indien nodig)
+connection.enable()
+
+# 4) Show command uitvoeren
+output = connection.send_command("show ip interface brief")
+
+# 5) Output tonen
+print("=== SHOW IP INTERFACE BRIEF ===")
+print(output)
+
+# 6) Verbinding sluiten
+connection.disconnect()
+
+
+Wat kan je eenvoudig veranderen? (EXAMEN!)
+
+Ander show-commando
+output = connection.send_command("show version")
+
+Meerdere show-commando’s
+
+commands = ["show ip route", "show running-config"]
+for cmd in commands:
+    print(connection.send_command(cmd))

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Marouane - Flask Demo</title>
+
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <header class="hero">
+        <nav class="nav">
+            <div class="logo">Marouane</div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Info</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Marouane Kharbouch</h1>
+            <p>Full Stack Flask Demo · Powered by Python</p>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="card">
+            <h2>Your IP Address</h2>
+            <p>You are calling me from <strong>{{ user_ip }}</strong></p>
+        </section>
+
+        <section class="card">
+            <h2>About This App</h2>
+            <p>
+                This is a Flask-powered demonstration website with a simple, clean layout.
+                It shows your IP address and is ready to be extended with more features.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ap4 - Webforms Tasks</title>
+</head>
+<body>
+  <h1>Ap4 - Tasks Webforms</h1>
+
+  <h2>Zoeken</h2>
+  <form method="get" action="/">
+    <input type="text" name="q" placeholder="zoek in title..." value="{{ q }}">
+    <button type="submit">Zoek</button>
+    <a href="/">Reset</a>
+  </form>
+
+  <hr>
+
+  <h2>Nieuwe task toevoegen</h2>
+  <form method="post" action="/add">
+    <label>Title:</label>
+    <input type="text" name="title" required>
+    <label>Done?</label>
+    <input type="checkbox" name="done">
+    <button type="submit">Add</button>
+  </form>
+
+  <hr>
+
+  <h2>Tasks lijst</h2>
+  {% if tasks|length == 0 %}
+    <p><b>Geen taken gevonden.</b></p>
+  {% else %}
+    <table border="1" cellpadding="6">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Done</th>
+        <th>Actions</th>
+      </tr>
+
+      {% for t in tasks %}
+      <tr>
+        <td>{{ t.id }}</td>
+        <td>{{ t.title }}</td>
+        <td>{{ "✅" if t.done else "❌" }}</td>
+        <td>
+          <form method="post" action="/toggle/{{ t.id }}" style="display:inline;">
+            <button type="submit">Toggle done</button>
+          </form>
+
+          <form method="post" action="/delete/{{ t.id }}" style="display:inline;">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+
+  <hr>
+  <h2>API test (optioneel)</h2>
+  <p>Bekijk JSON via: <a href="/api/v1/tasks">/api/v1/tasks</a></p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+sandbox = geisoleerde leeromgeving waar je dingen kan uitproberen zonder dat deze invloed hebben op het echte systeem
+
+SQL = Structured Query Language → taal om met databanken te werken.
+
+Wat doet Ansible vooral?
+
+Ansible is vooral een tool voor deployment en configuration management.
+
+Configuration management:
+Ansible zorgt ervoor dat alle servers exact dezelfde configuratie hebben (packages, services, users, instellingen…).
+→ Dit gebeurt via playbooks en YAML.
+
+Deployment:
+Je kan applicaties automatisch uitrollen op meerdere servers tegelijk.
+
+
+Terraform dient vooral om infrastructuur te provisioneren: servers, netwerken, databases, load balancers, enz.
+
+NSO is een orkestratietool die netwerken van verschillende merken (vendors) kan managen, configureren en automatiseren.
+YANG is een gestandaardiseerd, vendor-onafhankelijk datamodel waarmee netwerkapparaten eenduidig beheerd kunnen worden.
+ISE is een systeem dat bepaalt wie of wat toegang krijgt tot het netwerk, onder welke voorwaarden, en met welke rechten.
+
+MDM staat voor Mobile Device Management.
+MDM is software die bedrijven gebruiken om smartphones, tablets en laptops centraal te beheren en te beveiligen.
+
+
+aantonen dat je reversible kan gebruiken

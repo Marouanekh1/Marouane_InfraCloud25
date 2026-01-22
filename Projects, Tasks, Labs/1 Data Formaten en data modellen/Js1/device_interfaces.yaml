@@ -1,0 +1,31 @@
+device:
+  hostname: R1
+  mgmt_ip: 192.168.56.101
+  os: iosxe
+  site: odisee-lab
+
+  interfaces:
+    - name: GigabitEthernet0/0
+      type: ethernet
+      enabled: true
+      oper_status: up
+      description: Link naar switch SW1
+      ipv4:
+        address: 10.10.10.1
+        netmask: 255.255.255.0
+
+    - name: GigabitEthernet0/1
+      type: ethernet
+      enabled: true
+      oper_status: down
+      description: Reserve poort
+      ipv4: null
+
+    - name: Loopback0
+      type: loopback
+      enabled: true
+      oper_status: up
+      description: Router-ID
+      ipv4:
+        address: 1.1.1.1
+        netmask: 255.255.255.255

@@ -1,0 +1,21 @@
+Yg1 - Conversie van YAML naar andere formaten
+
+VOORBEELD data.yaml:
+routers:
+  - name: R1
+    ip: 192.168.1.1
+  - name: R2
+    ip: 192.168.1.2
+
+andere formaat is JSON
+
+PYTHON VOORBEELD:
+
+import yaml
+import json
+
+with open("data.yaml") as f:
+    data = yaml.safe_load(f)
+
+with open("data.json", "w") as f:
+    json.dump(data, f, indent=2)

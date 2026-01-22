@@ -1,0 +1,15 @@
+Ap5 – Eigen REST-API experiment met curl (GET/POST tegen Ap3)
+
+
+1)Start eerst Ap3 (python ap3_api.py) zodat de API draait.
+
+2)GET alle boeken
+curl http://127.0.0.1:5000/books
+
+3)GET boek met id 1
+curl http://127.0.0.1:5000/books/1
+
+4)POST nieuw boek (JSON)
+curl -X POST http://127.0.0.1:5000/books ^
+-H "Content-Type: application/json" ^
+-d "{\"title\":\"Cloud basics\",\"author\":\"Marouane\"}"

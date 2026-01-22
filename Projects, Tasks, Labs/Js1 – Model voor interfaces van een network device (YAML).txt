@@ -1,0 +1,13 @@
+Js1 – Model voor interfaces van een network device (YAML)
+device:
+  hostname: R1
+  mgmt_ip: 192.168.1.10
+  interfaces:
+    - name: GigabitEthernet0/0
+      ip_address: 192.168.10.1
+      subnet_mask: 255.255.255.0
+      status: up
+    - name: GigabitEthernet0/1
+      ip_address: 192.168.20.1
+      subnet_mask: 255.255.255.0
+      status: down

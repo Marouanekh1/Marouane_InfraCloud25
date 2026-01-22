@@ -1,0 +1,9 @@
+Ap6 – Eigen REST-API experiment met curl 2 (gebruik makend van forms)
+
+1)Je stuurt form data via curl naar /add-book.
+
+Start eerst Ap4 (python ap4_webform_api.py)
+
+2)POST form-data
+Windows CMD (meestal ok)
+curl -X POST http://127.0.0.1:5000/add-book -d "title=Testboek&author=Odisee"

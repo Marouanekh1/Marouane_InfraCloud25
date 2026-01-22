@@ -1,0 +1,29 @@
+{
+  "device": {
+    "hostname": "R1",
+    "mgmt_ip": "192.168.56.101",
+    "interfaces": [
+      {
+        "name": "GigabitEthernet0/0",
+        "type": "ethernet",
+        "oper_status": "up",
+        "enabled": true,
+        "ipv4": { "address": "10.10.10.1", "netmask": "255.255.255.0" }
+      },
+      {
+        "name": "GigabitEthernet0/1",
+        "type": "ethernet",
+        "oper_status": "down",
+        "enabled": true,
+        "ipv4": null
+      },
+      {
+        "name": "Loopback0",
+        "type": "loopback",
+        "oper_status": "up",
+        "enabled": true,
+        "ipv4": { "address": "1.1.1.1", "netmask": "255.255.255.255" }
+      }
+    ]
+  }
+}

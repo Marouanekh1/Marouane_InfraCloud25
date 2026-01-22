@@ -1,0 +1,4 @@
+name,ip,status,protocol
+GigabitEthernet0/0,10.10.10.1,up,up
+GigabitEthernet0/1,unassigned,administratively down,down
+Loopback0,1.1.1.1,up,up

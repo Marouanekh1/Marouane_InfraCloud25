@@ -1,0 +1,22 @@
+Js3 – JSON filteren met Python (netwerkapplicatie)
+
+VOORBEELD interfaces.json
+
+{
+  "interfaces": [
+    {"name": "Gig0/0", "status": "up"},
+    {"name": "Gig0/1", "status": "down"}
+  ]
+}
+
+
+Python Filter
+
+import json
+
+with open("interfaces.json") as f:
+    data = json.load(f)
+
+for interface in data["interfaces"]:
+    if interface["status"] == "up":
+        print(interface["name"])

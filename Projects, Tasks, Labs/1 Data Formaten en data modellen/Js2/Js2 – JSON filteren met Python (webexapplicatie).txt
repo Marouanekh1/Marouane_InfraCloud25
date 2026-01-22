@@ -1,0 +1,20 @@
+VOORBEELD JSON webex.json
+ {
+  "items": [
+    {"id": "1", "title": "Netwerk"},
+    {"id": "2", "title": "DevNet"},
+    {"id": "3", "title": "Test"}
+  ]
+}
+
+PYTHON FILTER:
+
+
+import json
+
+with open("webex.json") as f:
+    data = json.load(f)
+
+for room in data["items"]:
+    if room["title"] == "DevNet":
+        print(room["id"], room["title"])

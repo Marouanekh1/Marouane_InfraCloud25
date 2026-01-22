@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<device name="R1"><interface><name>GigabitEthernet0/0</name><ip>10.10.10.1</ip><status>up</status><protocol>up</protocol></interface><interface><name>GigabitEthernet0/1</name><ip>unassigned</ip><status>administratively down</status><protocol>down</protocol></interface><interface><name>Loopback0</name><ip>1.1.1.1</ip><status>up</status><protocol>up</protocol></interface></device>

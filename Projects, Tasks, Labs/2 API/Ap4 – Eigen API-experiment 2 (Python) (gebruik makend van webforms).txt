@@ -1,0 +1,53 @@
+Ap4 – Eigen API-experiment 2 (Python) (gebruik makend van webforms)
+
+
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+books = [
+    {"id": 1, "title": "Python basics", "author": "Cisco"}
+]
+
+@app.get("/")
+def home():
+    # HTML form (zoals "webforms" - super simpel)
+    return """
+    <h2>Voeg een boek toe</h2>
+    <form method="POST" action="/add-book">
+      Title: <input name="title" /><br/>
+      Author: <input name="author" /><br/>
+      <button type="submit">Add</button>
+    </form>
+    <p>Bekijk alle boeken: <a href="/books">/books</a></p>
+    """
+
+@app.get("/books")
+def get_books():
+    return jsonify(books)
+
+@app.post("/add-book")
+def add_book_form():
+    title = request.form.get("title")
+    author = request.form.get("author")
+
+    if not title or not author:
+        return "Title en Author zijn verplicht", 400
+
+    new_id = max(b["id"] for b in books) + 1 if books else 1
+    books.append({"id": new_id, "title": title, "author": author})
+
+    return f"Boek toegevoegd! Ga naar <a href='/books'>/books</a>"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+RUNNEN?
+python ap4_webform_api.py
+
+TESTEN?
+http://127.0.0.1:5000/
+
+Voeg een boek toe via form.
+http://127.0.0.1:5000/books

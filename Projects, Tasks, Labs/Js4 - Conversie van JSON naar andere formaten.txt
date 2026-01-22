@@ -1,0 +1,24 @@
+Js4 - Conversie van JSON naar andere formaten
+
+VOORBEELD data.json:
+
+[
+  {"name": "R1", "ip": "192.168.1.1"},
+  {"name": "R2", "ip": "192.168.1.2"}
+]
+
+
+Python: JSON → CSV:
+
+import json
+import csv
+
+with open("data.json") as f:
+    data = json.load(f)
+
+with open("data.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["name", "ip"])
+
+    for item in data:
+        writer.writerow([item["name"], item["ip"]])
